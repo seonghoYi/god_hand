@@ -1,4 +1,7 @@
+#include <pico/multicore.h>
+
 #include "ap.h"
+#include "secondary_main.h"
 
 
 void apInit()
@@ -9,6 +12,7 @@ void apInit()
 
 void apMain()
 {
+	multicore_launch_core1(secondary_main_entry);
 
 	vTaskStartScheduler();
 
