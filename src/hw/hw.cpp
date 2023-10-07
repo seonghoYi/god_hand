@@ -1,0 +1,19 @@
+#include "hw.h"
+
+
+
+
+bool hwInit()
+{
+	bool ret = true;
+	ret &= gpioInit();
+	ret &= ledInit();
+	ret &= uartInit();
+	ret &= cliInit();
+	ret &= i2cInit();
+	//ret &= spiInit();
+	//ret &= imuInit();
+	ret &= adxl345Init();
+	ret &= HC06Init();
+	return ret;
+}
